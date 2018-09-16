@@ -1,0 +1,28 @@
+
+
+.jumbotron{
+    background-color: rgb(144, 66, 27);
+    text-align: center;
+    color: white;
+    
+}
+
+.card-header{
+    background-color: rgb(83, 144, 224);
+    color: white;
+    text-align: left;
+    font-weight: bold;
+    
+}
+.card{
+    border: 5px solid rgb(83, 144, 224);
+    
+}
+
+
+.card-body{
+height: 425px;
+
+
+
+}

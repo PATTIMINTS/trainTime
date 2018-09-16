@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+
+       
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg">
+
+                <div class="jumbotron">
+                    <h1 class="display-4">Anytime is Train Time</h1>
+                    <h3 class="lead">Choo Choo. Chee Chee</h3>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row"></div>
+        <div class="col-lg">
+
+            <div class="card">
+                <div class="card-header">
+                    Current Train Schedule
+                </div>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col" id = "name">Train Name</th>
+                        <th scope="col" id = "destination">Destination</th>
+                        <th scope="col" id = "freq">Frequency</th>
+                        <th scope="col" id = "nextA">Next Arrival</th>
+                        <th scope="col" id = "nextA">Minutes Away</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td scope="row" id="train">Trenton Express</td>
+                        <td id="des">Trenton</td>
+                        <td id="fre">25</td>
+                        <td id="nA">05:35 PM</td>
+                        <td id="minA">10</td>
+                      </tr>
+                      <tr>
+                        <td scope="row">Oregon Trail</td>
+                        <td>Salem Oregon</td>
+                        <td>3600</td>
+                        <td>01:39 PM</td>
+                        <td>1154</td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg">
+
+                <div class="card">
+                    <div class="card-header">
+                        Add Train
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextArea">Train Name</label>
+                                <input type="text" class="form-control" id="name-input" aria-describedby="emailHelp"
+                                    placeholder="">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextArea">Destination</label>
+                                <input type="text" class="form-control" id="dest-input" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextArea">First Train Time</label>
+                                <input type="text" class="form-control" id="time-input" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextArea">Frequency</label>
+                                <input type="text" class="form-control" id="frequent-input" placeholder="">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary"id="addU">Submit</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="tr.js"></script>
+</body>
+
+</html>
