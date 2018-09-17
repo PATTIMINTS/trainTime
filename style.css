@@ -1,4 +1,6 @@
-
+body{
+    background-color: rgb(243, 240, 212)
+}
 
 .jumbotron{
     background-color: rgb(144, 66, 27);
@@ -24,5 +26,16 @@
 height: 425px;
 
 
+
+}
+
+.tableBody{
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+}
+
+.trainTable{
+    color:rgba(37, 74, 122, 0.616);
 
 }

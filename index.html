@@ -11,7 +11,7 @@
 
 
     <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
-
+    
        
     <link rel="stylesheet" href="style.css">
 </head>
@@ -37,31 +37,25 @@
                 <div class="card-header">
                     Current Train Schedule
                 </div>
-                <table class="table">
+                <table class="trainTable" id="trainTable">
                     <thead>
                       <tr>
                         <th scope="col" id = "name">Train Name</th>
                         <th scope="col" id = "destination">Destination</th>
                         <th scope="col" id = "freq">Frequency</th>
                         <th scope="col" id = "nextA">Next Arrival</th>
-                        <th scope="col" id = "nextA">Minutes Away</th>
+                        <th scope="col" id = "nextMa">Minutes Away</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody class = tableBody>
                       <tr>
-                        <td scope="row" id="train">Trenton Express</td>
-                        <td id="des">Trenton</td>
-                        <td id="fre">25</td>
-                        <td id="nA">05:35 PM</td>
-                        <td id="minA">10</td>
+                        <td scope="row" id="train"></td>
+                        <td id="des"></td>
+                        <td id="fre"></td>
+                        <td id="nA"></td>
+                        <td id="minA"></td>
                       </tr>
-                      <tr>
-                        <td scope="row">Oregon Trail</td>
-                        <td>Salem Oregon</td>
-                        <td>3600</td>
-                        <td>01:39 PM</td>
-                        <td>1154</td>
-                      </tr>
+                      
                     
                     </tbody>
                   </table>
