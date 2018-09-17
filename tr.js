@@ -52,35 +52,51 @@ database.ref("/users").on("child_added", function(childSnapshot, prevChildKey){
 //console.log(childSnapshot.val());
 
   // storing childsnapshot.val() in variable
-  //var snap = childSnapshot.val();
+ /* var index = 0;
+ var removeButton = $("<button>").html("<span class = 'glyphicon glyphicon-remove'></span").addClass("removeButton").attr("data-index", index).attr("data-key", childSnapshot.key);*/
   var trainName = childSnapshot.val().name;
   var trainDest = childSnapshot.val().destination;
   var trainTime = childSnapshot.val().firstTrainTime;
-  var trainFreq = childSnapshot.val().frequency;
+  //var trainFreq = childSnapshot.val().frequency;
 
   console.log(trainName);
   console.log(trainDest);
   console.log(trainTime);
   console.log(trainFreq);
 
+  var trainFreq = parseInt(childSnapshot.val().frequency);
+  var firstTrain = moment(trainTime, "HH:mm").subtract(1, "years");
+  console.log(firstTrain);
+  var currentTime = moment();
+  console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+  // Difference
+  var diffTime = moment().diff(moment(firstTrain), "minutes");
+  var diffTest = moment(diffTime).format("hh:mm");
+  console.log(diffTest);
+  console.log("DIFFERENCE IN TIME: " + diffTime);
+
+  //Time apart
+
+  var tRemainder = diffTime % trainFreq;
+  console.log(tRemainder);
+
+  // Min until train
+  var minutesRemaining = trainFreq - tRemainder;
+  console.log('Minutes till train: ' + minutesRemaining);
+
+  // Next train
+  var nextTrain = moment().add(minutesRemaining, "minutes").format ("hh:mm A");
+  
+
+  console.log(nextTrain);
+
 
   $("#train").append("<tr><td>" + trainName + "</td>");
   $("#des").append("<tr><td>" + trainDest + "</td>");
   $("#fre").append("<tr><td>" + trainFreq + "</td>");
-  $("#nA").append("<tr><td>" + " " + "</td>");
-  $("#minA").append("<tr><td>" + " " + "</td>");
-
- 
-
-  // Change the HTML
-  /*$("#train").text(snap.name);
-  $("#des").text(snap.destination);
-  $("nextA").text(snap.firstTrainTime);
-  $("#fre").text(snap.frequency);
-
-  //var firstT = moment.unix(trainTime).format("MM/DD/YY");  
-
-  $("#trainT").append ("<tr><td" + trainName + "></td><td" + trainDest + "></td><td" + trainTime + "></td><td" + trainFreq + "></td></tr>");*/
+  $("#nA").append("<tr><td>" + nextTrain + "</td>");
+  $("#minA").append("<tr><td>" + minutesRemaining + "</td>");
+  
   
   // Handle the error
 }, function(errorObject) {
